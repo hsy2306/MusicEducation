@@ -104,7 +104,7 @@ public class ExampleInsideLayout extends RendererActivity implements View.OnClic
             black[i].position().y = 0.35f;
             black[i].position().z = 0.1f;
             black[i].rotation().y = -90;
-            black[i].rotation().z = 10;
+            black[i].rotation().z = 20;
             scene.addChild(black[i]);
         }
     }
