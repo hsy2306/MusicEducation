@@ -1,4 +1,4 @@
-package min3d.sampleProject1;
+package camera;
 
 import android.content.Context;
 import android.hardware.Camera;

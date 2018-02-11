@@ -1,10 +1,10 @@
-package min3d.sampleProject1;
+package camera;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 
-class CameraPreview extends CameraPreviewBase {
+public class CameraPreview extends CameraPreviewBase {
 
    	public CameraPreview(Context context) {
 		super(context);

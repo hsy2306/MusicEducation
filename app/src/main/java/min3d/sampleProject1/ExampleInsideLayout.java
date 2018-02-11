@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 
 import java.util.Random;
 
+import camera.CameraPreview;
 import min3d.core.Object3dContainer;
 import min3d.core.RendererActivity;
 import min3d.objectPrimitives.Box;
@@ -23,14 +24,13 @@ import min3d.vos.Light;
  *
  * @author Lee
  */
-public class ExampleInsideLayout extends RendererActivity{
+public class ExampleInsideLayout extends RendererActivity {
     Button button[];
     Color4[] blackColor;
     Color4[] whiteColor;
     Color4[] test;
     Object3dContainer white[], black[];
     int ranNum;
-    int id[] = new int[8];
 
     String string[] = {"도", "레", "미", "파", "솔", "라", "시", "도"};
 
@@ -51,25 +51,6 @@ public class ExampleInsideLayout extends RendererActivity{
             button[i].setTag(i);
             button[i].setOnTouchListener(onTouchListener);
         }
-
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                checkArduino();
-            }
-        });
-
-        thread.run();
-/*
-        for (int i = 0; i < button.length; i++) {
-            final int index = i;
-            button[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    soundManager.getInstance().play(index);
-                }
-            });
-        }*/
     }
 
 
@@ -114,12 +95,6 @@ public class ExampleInsideLayout extends RendererActivity{
             black[i] = new Box(0.2f, 0.5f, 0.2f, blackColor, false, false, true);
         }
 
-/*
-        IParser parser = Parser.createParser(Parser.Type.OBJ,
-                getResources(), "min3d.sampleProject1:raw/camaro_obj", true);
-        parser.parse();
-
-        objModel = parser.getParsedObject();*/
         int soundId = R.raw.sound1;
         for (int i = 0; i < white.length; i++) {
             white[i].position().x = -1f + 0.22f * i;
@@ -156,7 +131,6 @@ public class ExampleInsideLayout extends RendererActivity{
 
     public boolean onTouchEvent(MotionEvent e) {
         super.onTouchEvent(e);
-        int pointCount = e.getPointerCount();
         Random random = new Random();
         if (e.getAction() == MotionEvent.ACTION_UP) {
             white[ranNum] = new Box(0.2f, 1f, 0.2f, whiteColor, false, false, true);
@@ -209,26 +183,20 @@ public class ExampleInsideLayout extends RendererActivity{
             } else if (action == MotionEvent.ACTION_UP) {
                 for (int i = 0; i < button.length; i++) {
                     if (i == (int) button[i].getTag()) {
-                Log.d("tagtt", "up : " + String.valueOf(i));
-                scene.removeChild(white[i]);
-                white[i] = new Box(0.2f, 1f, 0.2f, whiteColor, false, false, true);
-                white[i].position().x = -1f + 0.22f * i;
-                white[i].position().y = 0.1f;
-                white[i].rotation().y = -90;
-                white[i].rotation().z = 30;
-                scene.addChild(white[i]);
-                return true;
-            }
-        }
-            } else if (action == MotionEvent.ACTION_POINTER_DOWN){
-
+                        Log.d("tagtt", "up : " + String.valueOf(i));
+                        scene.removeChild(white[i]);
+                        white[i] = new Box(0.2f, 1f, 0.2f, whiteColor, false, false, true);
+                        white[i].position().x = -1f + 0.22f * i;
+                        white[i].position().y = 0.1f;
+                        white[i].rotation().y = -90;
+                        white[i].rotation().z = 30;
+                        scene.addChild(white[i]);
+                        return true;
+                    }
+                }
             }
             return false;
         }
     };
-
-    public void checkArduino(){
-        //white[0].rotation().y++;
-    }
 }
 
