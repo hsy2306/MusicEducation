@@ -1,16 +1,15 @@
 package min3d.sampleProject1;
 
-import java.io.IOException;
-import java.util.List;
-
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.hardware.Camera;
 import android.hardware.Camera.PreviewCallback;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
+import java.io.IOException;
+import java.util.List;
 
 public abstract class CameraPreviewBase extends SurfaceView implements SurfaceHolder.Callback {
 
