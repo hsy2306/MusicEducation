@@ -1,5 +1,6 @@
 package min3d.sampleProject1;
 
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +30,8 @@ public class ExampleInsideLayout extends RendererActivity{
     Color4[] test;
     Object3dContainer white[], black[];
     int ranNum;
-    int pressed;
+    int id[] = new int[8];
+
     String string[] = {"도", "레", "미", "파", "솔", "라", "시", "도"};
 
     @Override
@@ -49,6 +51,15 @@ public class ExampleInsideLayout extends RendererActivity{
             button[i].setTag(i);
             button[i].setOnTouchListener(onTouchListener);
         }
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                checkArduino();
+            }
+        });
+
+        thread.run();
 /*
         for (int i = 0; i < button.length; i++) {
             final int index = i;
@@ -140,12 +151,12 @@ public class ExampleInsideLayout extends RendererActivity{
 
     @Override
     public void updateScene() {
-        //cube.rotation().y++;
-        //objModel.rotation().z++;
+
     }
 
     public boolean onTouchEvent(MotionEvent e) {
         super.onTouchEvent(e);
+        int pointCount = e.getPointerCount();
         Random random = new Random();
         if (e.getAction() == MotionEvent.ACTION_UP) {
             white[ranNum] = new Box(0.2f, 1f, 0.2f, whiteColor, false, false, true);
@@ -178,12 +189,11 @@ public class ExampleInsideLayout extends RendererActivity{
                 button[i] = (Button) view;
             }
             int action = motionEvent.getAction();
-            int id = view.getId();
 
             if (action == MotionEvent.ACTION_DOWN) {
                 for (int i = 0; i < button.length; i++) {
-                    if (i == (int)button[i].getTag()) {
-                        pressed = i;
+                    if (i == (int) button[i].getTag()) {
+                        Log.d("tagtt", "down : " + String.valueOf(i));
                         scene.removeChild(white[i]);
                         white[i] = new Box(0.2f, 1f, 0.2f, test, false, false, true);
                         white[i].position().x = -1f + 0.22f * i;
@@ -197,16 +207,28 @@ public class ExampleInsideLayout extends RendererActivity{
                     }
                 }
             } else if (action == MotionEvent.ACTION_UP) {
-                white[pressed] = new Box(0.2f, 1f, 0.2f, whiteColor, false, false, true);
-                white[pressed].position().x = -1f + 0.22f * pressed;
-                white[pressed].position().y = 0.1f;
-                white[pressed].rotation().y = -90;
-                white[pressed].rotation().z = 30;
-                scene.addChild(white[pressed]);
+                for (int i = 0; i < button.length; i++) {
+                    if (i == (int) button[i].getTag()) {
+                Log.d("tagtt", "up : " + String.valueOf(i));
+                scene.removeChild(white[i]);
+                white[i] = new Box(0.2f, 1f, 0.2f, whiteColor, false, false, true);
+                white[i].position().x = -1f + 0.22f * i;
+                white[i].position().y = 0.1f;
+                white[i].rotation().y = -90;
+                white[i].rotation().z = 30;
+                scene.addChild(white[i]);
                 return true;
+            }
+        }
+            } else if (action == MotionEvent.ACTION_POINTER_DOWN){
+
             }
             return false;
         }
     };
+
+    public void checkArduino(){
+        //white[0].rotation().y++;
+    }
 }
 
