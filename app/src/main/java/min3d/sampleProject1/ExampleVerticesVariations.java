@@ -11,11 +11,11 @@ import min3d.vos.Color4;
 import min3d.vos.Light;
 
 /**
- * Demonstrates use of Object3D's constructor parameters "useUvs", "useNormals", and "useColors".
- * These params are passed to the Object3D's MeshData instance to determine whether the object's
+ * Demonstrates use of Object3D'SelectMode constructor parameters "useUvs", "useNormals", and "useColors".
+ * These params are passed to the Object3D'SelectMode MeshData instance to determine whether the object'SelectMode
  * vertices will include texture coordinate, normal, and color data (By default, itwill).
  * 
- * It's useful to set these to false when you know you won't need them,  
+ * It'SelectMode useful to set these to false when you know you won't need them,
  * for the sake of memory and performance. 
  * 
  * Note that the Object3d properties "texturesEnabled", "normalsEnabled", and "colorsEnabled" 
@@ -47,21 +47,21 @@ public class ExampleVerticesVariations extends RendererActivity
 		Shared.textureManager().addTextureId(b, "uglysquares", false);
 		b.recycle();
 
-		// _cube1's vertices contain color data, but not U/V or normal data.
+		// _cube1'SelectMode vertices contain color data, but not U/V or normal data.
 		// The result is an unshaded box, with a different color on each side.
 
 		_cube1 = new Box(.6f,.6f,.6f, colors,  false,false,true);
 		_cube1.normalsEnabled(false);
 		_cube1.position().y = 1.2f;
 
-		// _cube2's verticies contain uv data, but not normal or color data.
+		// _cube2'SelectMode verticies contain uv data, but not normal or color data.
 		// The result is an unshaded box with a texture on each side.
 		
 		_cube2 = new Box(.6f,.6f,.6f, colors,  true,false,false);
 		_cube2.position().y = .4f;
 		_cube2.textures().addById("uglysquares");
 		
-		// _cube3's verticies contain uv and normal data, but not color data  
+		// _cube3'SelectMode verticies contain uv and normal data, but not color data
 		// The result is an shaded box with a texture on each side.
 		// The Scene must of course contain a light for the object to be visible.
 		
@@ -69,9 +69,9 @@ public class ExampleVerticesVariations extends RendererActivity
 		_cube3.position().y = -.4f;
 		_cube3.textures().addById("uglysquares");
 		
-		// _cube4's verticies contain neither uv, normal, or color data (in other words, just position data) 
-		// Since it does not use per-vertex color data, the Object3's defaultColor property
-		// will dictate the object's color.
+		// _cube4'SelectMode verticies contain neither uv, normal, or color data (in other words, just position data)
+		// Since it does not use per-vertex color data, the Object3'SelectMode defaultColor property
+		// will dictate the object'SelectMode color.
 		// The result is an unshaded box which is one solid color (red);
 		
 		_cube4 = new Box(.6f,.6f,.6f, colors,  false,false,false);

@@ -39,7 +39,7 @@ public class ExampleSubsetOfFaces extends RendererActivity
 	@Override 
 	public void updateScene() 
 	{
-		// Update the parameters for rendering subset of cylinder's faces
+		// Update the parameters for rendering subset of cylinder'SelectMode faces
 		_cylinder.faces().renderSubsetStartIndex(_faceIndexStart);
 		_cylinder.faces().renderSubsetLength(_faceIndexLength);
 		_faceIndexLength += _incrementer;

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.hardware.Camera;
 import android.hardware.Camera.PreviewCallback;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -12,8 +11,6 @@ import java.io.IOException;
 import java.util.List;
 
 public abstract class CameraPreviewBase extends SurfaceView implements SurfaceHolder.Callback {
-
-	private static final String TAG = "OpencvViewBase::SurfaceView";
 
     private Camera              mCamera;
     private SurfaceHolder       mHolder;
@@ -32,7 +29,6 @@ public abstract class CameraPreviewBase extends SurfaceView implements SurfaceHo
 		mHolder = getHolder();
 		mHolder.addCallback(this);
 		mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-		Log.i(TAG, "Instantiated new " + this.getClass());
 	}    
 
     public int getFrameWidth() {
@@ -44,7 +40,6 @@ public abstract class CameraPreviewBase extends SurfaceView implements SurfaceHo
     }
 
     public void surfaceChanged(SurfaceHolder _holder, int format, int width, int height) {
-        Log.i(TAG, "surfaceCreated");
         if (mCamera != null) {
             Camera.Parameters params = mCamera.getParameters();
             List<Camera.Size> sizes = params.getSupportedPreviewSizes();
@@ -67,7 +62,6 @@ public abstract class CameraPreviewBase extends SurfaceView implements SurfaceHo
     }
 
     public void surfaceCreated(SurfaceHolder holder) {
-        Log.i(TAG, "surfaceCreated");
         mCamera = Camera.open();
         //mCamera.setDisplayOrientation(90);
         try {
@@ -87,7 +81,6 @@ public abstract class CameraPreviewBase extends SurfaceView implements SurfaceHo
     }
 
     public void surfaceDestroyed(SurfaceHolder holder) {
-        Log.i(TAG, "surfaceDestroyed");
         if (mCamera != null) {
             synchronized (this) {
                 mCamera.stopPreview();

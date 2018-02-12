@@ -12,7 +12,7 @@ import min3d.vos.Light;
  * Example of implementing a transparent GLSurfaceView.
  * 
  * 	(a) Override glSurfaceViewConfig() to configure glSurfaceView for transparency as shown
- * 	(b) Set the scene's backgroundColor to 0x00000000 (black with 0-alpha) 
+ * 	(b) Set the scene'SelectMode backgroundColor to 0x00000000 (black with 0-alpha)
  * 
  * If you were to place any 2D elements (images, etc) in the Activity "behind" glSurface,
  * they would be now visible.

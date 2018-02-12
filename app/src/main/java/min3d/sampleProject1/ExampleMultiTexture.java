@@ -23,7 +23,7 @@ import min3d.vos.TextureVo;
  * 
  * In this example, a sphere has an image of jupiter as its first texture.
  * Its second texture is a plain white image with a transparent 'hole' in the middle.
- * We'll see what's the effect of applying different texture environment 'blend modes'
+ * We'll see what'SelectMode the effect of applying different texture environment 'blend modes'
  * to the second texture.  
  *  
  * @author Lee
@@ -84,7 +84,7 @@ public class ExampleMultiTexture extends RendererActivity
 		_sphere.textures().addById("jupiter");
 		TextureVo texture = _sphere.textures().addById("alpha");
 		
-		// We saved a reference to the sphere's "alpha" texture above so we can target 
+		// We saved a reference to the sphere'SelectMode "alpha" texture above so we can target
 		// its texture environment VO, which we will change around in the loop below.
 		_alphaTextureEnv = texture.textureEnvs.get(0);
 		

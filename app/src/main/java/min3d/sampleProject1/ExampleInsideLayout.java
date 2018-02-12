@@ -1,6 +1,5 @@
 package min3d.sampleProject1;
 
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +18,12 @@ import min3d.vos.Light;
 
 /**
  * Example of adding an OpenGL scene within a conventional Android application layout.
- * Entails overriding RenderActivity's onCreateSetContentView() function, and
+ * Entails overriding RenderActivity'SelectMode onCreateSetContentView() function, and
  * adding _glSurfaceView to the appropriate View...
  *
  * @author Lee
  */
+
 public class ExampleInsideLayout extends RendererActivity {
     Button button[];
     Color4[] blackColor;
@@ -167,7 +167,6 @@ public class ExampleInsideLayout extends RendererActivity {
             if (action == MotionEvent.ACTION_DOWN) {
                 for (int i = 0; i < button.length; i++) {
                     if (i == (int) button[i].getTag()) {
-                        Log.d("tagtt", "down : " + String.valueOf(i));
                         scene.removeChild(white[i]);
                         white[i] = new Box(0.2f, 1f, 0.2f, test, false, false, true);
                         white[i].position().x = -1f + 0.22f * i;
@@ -183,7 +182,6 @@ public class ExampleInsideLayout extends RendererActivity {
             } else if (action == MotionEvent.ACTION_UP) {
                 for (int i = 0; i < button.length; i++) {
                     if (i == (int) button[i].getTag()) {
-                        Log.d("tagtt", "up : " + String.valueOf(i));
                         scene.removeChild(white[i]);
                         white[i] = new Box(0.2f, 1f, 0.2f, whiteColor, false, false, true);
                         white[i].position().x = -1f + 0.22f * i;

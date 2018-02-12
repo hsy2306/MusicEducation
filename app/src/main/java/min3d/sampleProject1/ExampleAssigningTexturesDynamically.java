@@ -49,7 +49,7 @@ public class ExampleAssigningTexturesDynamically extends RendererActivity
 		Shared.textureManager().addTextureId(b, "moon", false);
 		b.recycle();
 		
-		// Create three TextureVo's
+		// Create three TextureVo'SelectMode
 		
 		_jupiterTexture = new TextureVo("jupiter");
 		_earthTexture = new TextureVo("earth");

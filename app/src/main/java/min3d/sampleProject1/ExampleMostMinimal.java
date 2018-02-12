@@ -18,7 +18,7 @@ public class ExampleMostMinimal extends RendererActivity
 	{
 		/*
 		 * Add a light to the Scene.
-		 * The Scene must have light for Object3d's with normals  
+		 * The Scene must have light for Object3d'SelectMode with normals
 		 * enabled (which is the default setting) to be visible.
 		 */
 		scene.lights().add( new Light() );
@@ -28,7 +28,7 @@ public class ExampleMostMinimal extends RendererActivity
 		 *  In this case, we're creating a cube using the Box class, which extends Object3d.
 		 *  Any Object3d must be declared with booleans that determine whether its vertices store: 
 		 *  	(a) U/V texture coordinates 
-		 *  	(b) Normals (required for shading based on light source/s)
+		 *  	(b) Normals (required for shading based on light source/SelectMode)
 		 *  	(c) Per-vertex color information 
 		 *  We're going to create a shaded cube without textures or colors, so for those arguments
 		 *  we are using "false,true,false".  

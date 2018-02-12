@@ -16,7 +16,7 @@ import min3d.vos.Light;
  * If you're familiar with Flash, this is similar to adding DisplayObjects to the displaylist.
  * 
  * If you're familiar with Papervision3D or Away3D for Flash, this is similar to using 
- * DisplayObject3D's or Object3D's to the Scene.
+ * DisplayObject3D'SelectMode or Object3D'SelectMode to the Scene.
  * 
  * @author Lee
  */
@@ -63,7 +63,7 @@ public class ExampleRotatingPlanets extends RendererActivity
 		Shared.textureManager().addTextureId(b, "moon", false);
 		b.recycle();
 
-		// Add textures to objects based on on the id's we assigned the textures in the texture manager
+		// Add textures to objects based on on the id'SelectMode we assigned the textures in the texture manager
 		_jupiter.textures().addById("jupiter");
 		_earth.textures().addById("earth");
 		_moon.textures().addById("moon");
