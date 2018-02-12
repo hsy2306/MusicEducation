@@ -32,7 +32,7 @@ public class ExampleInsideLayout extends RendererActivity {
     Object3dContainer white[], black[];
     int ranNum;
 
-    String string[] = {"도", "레", "미", "파", "솔", "라", "시", "도"};
+    String string[] = {"도", "눼", "미", "파", "솔", "라", "시", "도"};
 
     @Override
     protected void onCreateSetContentView() {
