@@ -36,6 +36,7 @@ public class ExampleInsideLayout extends RendererActivity {
 
     @Override
     protected void onCreateSetContentView() {
+        new Setmode().FullScreen(this);
         setContentView(R.layout.custom_layout_example);
         soundManager.getInstance().init(this);
         FrameLayout ll = (FrameLayout) this.findViewById(R.id.listActivity);

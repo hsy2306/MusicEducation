@@ -18,7 +18,7 @@ public class SelectMode extends Activity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectmode);
-
+        new Setmode().FullScreen(this);
         freemode = (Button)findViewById(R.id.freeMode);
 
         freemode.setOnClickListener(new View.OnClickListener() {
