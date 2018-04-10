@@ -66,8 +66,8 @@ public class RendererActivity extends Activity implements ISceneController
 		_glSurfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 8);
 		_glSurfaceView.getHolder().setFormat(PixelFormat.RGBA_8888);
 		_glSurfaceView.setRenderer(r);
+		_glSurfaceView.setZOrderOnTop(true);
 		_glSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
-		
         onCreateSetContentView();
 	}
     

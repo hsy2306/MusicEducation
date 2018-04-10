@@ -1,11 +1,8 @@
 package min3d.sampleProject1;
 
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
 import java.util.Random;
 
@@ -25,33 +22,19 @@ import min3d.vos.Light;
  */
 
 public class ExampleInsideLayout extends RendererActivity {
-    Button button[];
     Color4[] blackColor;
     Color4[] whiteColor;
     Color4[] test;
     Object3dContainer white[], black[];
     int ranNum;
 
-    String string[] = {"도", "레", "미", "파", "솔", "라", "시", "도"};
-
     @Override
     protected void onCreateSetContentView() {
-        new Setmode().FullScreen(this);
         setContentView(R.layout.custom_layout_example);
         soundManager.getInstance().init(this);
         FrameLayout ll = (FrameLayout) this.findViewById(R.id.listActivity);
         ll.addView(_glSurfaceView);
-        button = new Button[8];
         addContentView(new CameraPreview(this), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        for (int i = 0; i < 8; i++) {
-            button[i] = new Button(this);
-            button[i].setText(string[i]);
-            button[i].setX(150 + 3f + 2f * i * 100);
-            button[i].setY(900);
-            addContentView(button[i], new LinearLayout.LayoutParams(200, 200));
-            button[i].setTag(i);
-            button[i].setOnTouchListener(onTouchListener);
-        }
     }
 
 
@@ -156,46 +139,5 @@ public class ExampleInsideLayout extends RendererActivity {
         }
         return false;
     }
-
-    View.OnTouchListener onTouchListener = new View.OnTouchListener() {
-        @Override
-        public boolean onTouch(View view, MotionEvent motionEvent) {
-            for (int i = 0; i < button.length; i++) {
-                button[i] = (Button) view;
-            }
-            int action = motionEvent.getAction();
-
-            if (action == MotionEvent.ACTION_DOWN) {
-                for (int i = 0; i < button.length; i++) {
-                    if (i == (int) button[i].getTag()) {
-                        scene.removeChild(white[i]);
-                        white[i] = new Box(0.2f, 1f, 0.2f, test, false, false, true);
-                        white[i].position().x = -1f + 0.22f * i;
-                        white[i].position().y = 0.1f;
-                        white[i].rotation().y = -90;
-                        white[i].rotation().z = 30;
-                        soundManager.getInstance().play(i);
-                        scene.addChild(white[i]);
-                        white[i].scale().x -= 0.5f;
-                        return true;
-                    }
-                }
-            } else if (action == MotionEvent.ACTION_UP) {
-                for (int i = 0; i < button.length; i++) {
-                    if (i == (int) button[i].getTag()) {
-                        scene.removeChild(white[i]);
-                        white[i] = new Box(0.2f, 1f, 0.2f, whiteColor, false, false, true);
-                        white[i].position().x = -1f + 0.22f * i;
-                        white[i].position().y = 0.1f;
-                        white[i].rotation().y = -90;
-                        white[i].rotation().z = 30;
-                        scene.addChild(white[i]);
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-    };
 }
 
