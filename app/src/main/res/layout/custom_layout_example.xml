@@ -1,11 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/listActivity"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:orientation="vertical"
-	android:background="#ffffffff">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/listActivity"
+    android:background="@drawable/learnnote">
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="580dp"
+        android:layout_marginTop="50dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/exit"
+        android:id="@+id/exit"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/btnnote01"
+        android:id="@+id/btnnote01"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="120dp"
+        android:background="@drawable/btnnote02"
+        android:id="@+id/btnnote02" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="190dp"
+        android:background="@drawable/btnnote03"
+        android:id="@+id/btnnote03"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="260dp"
+        android:background="@drawable/btnnote04"
+        android:id="@+id/btnnote04" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="330dp"
+        android:background="@drawable/btnnote05"
+        android:id="@+id/btnnote05" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="400dp"
+        android:background="@drawable/btnnote06"
+        android:id="@+id/btnnote06"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="470dp"
+        android:background="@drawable/btnnote07"
+        android:id="@+id/btnnote07"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="540dp"
+        android:background="@drawable/btnnote08"
+        android:id="@+id/btnnote08"/>
 </FrameLayout>
-
-

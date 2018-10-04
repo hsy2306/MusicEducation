@@ -1,31 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/over"
+    android:background="@drawable/main"
     android:gravity="center">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="550dp"
+        android:scaleType="fitXY"
+        android:id="@+id/btBtn"
+        android:src = "@drawable/imgbluetooth"
+        android:background="@color/transparent"
+        android:layout_weight="1"
+        />
+
+    <ImageButton
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="110dp"
+        android:scaleType="fitXY"
         android:id="@+id/studyMode"
-        android:text="이론 모드"
+        android:src = "@drawable/imgtrheroy"
+        android:background="@color/transparent"
+        android:layout_weight="1"
         />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="280dp"
+        android:scaleType="fitXY"
         android:id="@+id/testMode"
-        android:text="Test 모드"
+        android:src = "@drawable/imgtest"
+        android:background="@color/transparent"
+        android:layout_weight="1"
         />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="450dp"
+        android:scaleType="fitXY"
         android:id="@+id/freeMode"
-        android:text="자유 모드"
+        android:src = "@drawable/imgfree"
+        android:background="@color/transparent"
+        android:layout_weight="1"
         />
-
-
-</LinearLayout>
+</FrameLayout>

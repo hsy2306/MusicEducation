@@ -15,6 +15,7 @@ public class CameraPreview extends CameraPreviewBase {
 	}    
 
     @Override
+
     public void surfaceChanged(SurfaceHolder _holder, int format, int width, int height) {
         super.surfaceChanged(_holder, format, width, height);
     }

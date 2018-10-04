@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/learn">
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="580dp"
+        android:layout_marginTop="50dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/exit"
+        android:id="@+id/exit"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/left"
+        android:background= "@drawable/left"
+        android:text="좌"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:id="@+id/image"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="20dp"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="580dp"
+        android:id="@+id/right"
+        android:background = "@drawable/right"
+        android:text="우"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="290dp" />
+
+</FrameLayout>

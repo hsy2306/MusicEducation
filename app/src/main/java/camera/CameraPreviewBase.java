@@ -25,7 +25,8 @@ public abstract class CameraPreviewBase extends SurfaceView implements SurfaceHo
 	}
 	
 	public CameraPreviewBase(Context context, AttributeSet attrs) {
-		super(context, attrs);
+
+	    super(context, attrs);
 		mHolder = getHolder();
 		mHolder.addCallback(this);
 		mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
@@ -62,7 +63,8 @@ public abstract class CameraPreviewBase extends SurfaceView implements SurfaceHo
     }
 
     public void surfaceCreated(SurfaceHolder holder) {
-        mCamera = Camera.open();
+	    mCamera = Camera.open(Camera.CameraInfo.CAMERA_FACING_FRONT);
+        //mCamera = Camera.open();
         //mCamera.setDisplayOrientation(90);
         try {
             mCamera.setPreviewDisplay(holder);

@@ -13,6 +13,7 @@ import javax.microedition.khronos.opengles.GL10;
 public class CustomGLSurfaceView extends GLSurfaceView implements Renderer {
 
 	public CustomGLSurfaceView(Context context) {
+
 		super(context);
 
 		setEGLConfigChooser(8, 8, 8, 8, 16, 8);
