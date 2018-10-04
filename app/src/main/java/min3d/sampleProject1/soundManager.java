@@ -20,6 +20,7 @@ public class soundManager {
         if(m_instance == null){
             m_instance = new soundManager();
         }
+
         return m_instance;
     }
 
