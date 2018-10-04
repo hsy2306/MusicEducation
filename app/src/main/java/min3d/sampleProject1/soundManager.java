@@ -19,7 +19,6 @@ public class soundManager {
     public static soundManager getInstance(){
         if(m_instance == null){
             m_instance = new soundManager();
-
         }
         return m_instance;
     }
