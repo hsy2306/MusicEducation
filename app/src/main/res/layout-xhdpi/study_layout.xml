@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/learntheroy">
+
+    <ImageButton
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="270dp"
+        android:layout_width="450dp"
+        android:layout_height="70dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/learnnotebtn"
+        android:id="@+id/studyTheory"/>
+
+    <ImageButton
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="270dp"
+        android:layout_width="450dp"
+        android:layout_height="70dp"
+        android:scaleType="fitXY"
+        android:id="@+id/studyPiano"
+        android:background="@drawable/learntheroybtn" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="850dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/exit"
+        android:id="@+id/exit"/>
+</FrameLayout>

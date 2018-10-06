@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main"
+    android:gravity="center">
+
+    <ImageButton
+        android:layout_width="128dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="800dp"
+        android:scaleType="fitXY"
+        android:id="@+id/btBtn"
+        android:src = "@drawable/imgbluetooth"
+        android:background="@color/transparent"
+        android:layout_weight="1"
+        />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginLeft="120dp"
+        android:scaleType="fitXY"
+        android:id="@+id/studyMode"
+        android:src = "@drawable/imgtrheroy"
+        android:background="@color/transparent"
+        android:layout_weight="1"
+        />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginLeft="420dp"
+        android:scaleType="fitXY"
+        android:id="@+id/testMode"
+        android:src = "@drawable/imgtest"
+        android:background="@color/transparent"
+        android:layout_weight="1"
+        />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginLeft="720dp"
+        android:scaleType="fitXY"
+        android:id="@+id/freeMode"
+        android:src = "@drawable/imgfree"
+        android:background="@color/transparent"
+        android:layout_weight="1"
+        />
+</FrameLayout>
