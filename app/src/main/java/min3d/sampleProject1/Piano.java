@@ -160,14 +160,15 @@ public class Piano extends RendererActivity {
     }
 
     public int setX() {
-        return random.nextInt(1500);
+        return random.nextInt(1200);
     }
 
     public int setY() {
-        return random.nextInt(400);
+        return random.nextInt(350);
     }
 
     public void initScene() {
+
         scene.lights().add(new Light());
 
         blackColor = new Color4[6];
